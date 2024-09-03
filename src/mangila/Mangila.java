@@ -1,69 +1,22 @@
 package mangila;
 
-import java.util.Scanner;
-
 public class Mangila {
-
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        Grade[] gr = new Grade[100];
-        
-        System.out.println("Enter number of students: ");
-        int ns = sc.nextInt();
-
-        int numPassed = 0;
-        int numFailed = 0;
-        double totalSum = 0.0;
-
-        for (int i = 0; i < ns; i++) {
-
-            gr[i] = new Grade();
-            
-            System.out.println("Enter details of student " + (i + 1));
-            
-            System.out.print("Id: ");
-            int id = sc.nextInt();
-            
-            System.out.print("Name: ");
-            String name = sc.next();
-            
-            System.out.print("Prelim: ");
-            double prelim = sc.nextDouble();
-            
-            System.out.print("Midterm: ");
-            double midterm = sc.nextDouble();
-            
-            System.out.print("Prefinal: ");
-            double prefinal = sc.nextDouble();
-            
-            System.out.print("Finals: ");
-            double finals = sc.nextDouble();
-
-            gr[i].addGrade(id, name, prelim, midterm, prefinal, finals);
-
-            double average = (prelim + midterm + prefinal + finals) / 4.0;
-            totalSum += average;
-            
-            if (average >= 3.0) {
-                numPassed++;
-            } else {
-                numFailed++;
-            }
-        }
-
-        System.out.printf("%-10s %-15s %-7s %-7s %-7s %-7s %-10s %-7s\n", 
-                "Id", "Name", "Prelim", "Midterm", "Prefinal", "Finals", "Average", "Status");
-        for (int i = 0; i < ns; i++) {
-            gr[i].viewGrade();
-        }
-
-        double classAverage = totalSum / ns;
-        System.out.println("\nTotal number of students: " + ns);
-        System.out.printf("Total class average: %.2f\n", classAverage);
-        System.out.println("Number of students passed: " + numPassed);
-        System.out.println("Number of students failed: " + numFailed);
-
-        sc.close();
+    // for the account
+        Account account = new Account();  
+        account.getAccounts();            
     }
 }
+
+    
+//            Grades gr = new Grades();
+//            gr.addGrades(1011, "Micole Gwapo", 1.0, 2.2, 2.3, 1.3);
+//            gr.viewGrades();
+
+//                Products pr = new Products();
+//                pr.addProducts(1011, "Logod", 30.00, 60, 0);
+//                pr.viewProducts();
+//                
+//                Products pr1 = new Products();
+//                pr1.addProducts(1011, "Logod", 30.00, 0, 0);
+//                pr1.viewProducts();
