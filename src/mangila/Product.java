@@ -9,7 +9,7 @@ public class Product {
 
         System.out.print("Enter Product ID: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consume newline left-over
+        scanner.nextLine();
         System.out.print("Enter Product Name: ");
         String name = scanner.nextLine();
         System.out.print("Enter Product Price: ");
